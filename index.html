@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" disabled>
+        <div class="buttons">
+            <button class="c" onclick="clearDisplay()">C</button>
+            <button onclick="appendCharacter('(')">(</button>
+            <button onclick="appendCharacter(')')">)</button>
+            <button class="del" onclick="deleteCharacter()">DEL</button>
+            <button onclick="appendCharacter('7')">7</button>
+            <button onclick="appendCharacter('8')">8</button>
+            <button onclick="appendCharacter('9')">9</button>
+            <button onclick="appendCharacter('/')">/</button>
+            <button onclick="appendCharacter('4')">4</button>
+            <button onclick="appendCharacter('5')">5</button>
+            <button onclick="appendCharacter('6')">6</button>
+            <button onclick="appendCharacter('*')">*</button>
+            <button onclick="appendCharacter('1')">1</button>
+            <button onclick="appendCharacter('2')">2</button>
+            <button onclick="appendCharacter('3')">3</button>
+            <button onclick="appendCharacter('-')">-</button>
+            <button onclick="appendCharacter('0')">0</button>
+            <button onclick="appendCharacter('.')">.</button>
+            <button onclick="appendCharacter('+')">+</button>
+            <button class="equals" onclick="calculate()">=</button>
+            <button class="scientific" onclick="appendFunction('Math.sin')">sin</button>
+            <button class="scientific" onclick="appendFunction('Math.cos')">cos</button>
+            <button class="scientific" onclick="appendFunction('Math.tan')">tan</button>
+            <button class="scientific" onclick="appendCharacter('**')">^</button>
+            <button class="scientific" onclick="appendFunction('Math.sqrt')">√</button>
+            <button class="scientific" onclick="appendFunction('Math.log')">log</button>
+            <button class="scientific" onclick="appendFunction('Math.exp')">exp</button>
+            <button class="scientific" onclick="appendFunction('Math.PI')">π</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

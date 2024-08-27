@@ -1,0 +1,134 @@
+/* 기본 설정 */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* 계산기 스타일 */
+.calculator {
+    width: 320px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 디스플레이 스타일 */
+#display {
+    width: 100%;
+    height: 50px;
+    font-size: 24px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: right;
+    box-sizing: border-box;
+    transition: opacity 0.3s ease-in-out; /* 페이드 인 효과 */
+    animation: slideUp 0.3s ease-in-out; /* 값이 추가될 때 애니메이션 */
+}
+
+/* 버튼 스타일 */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* 기본 버튼 스타일 */
+button {
+    width: 100%;
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #eee;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, background-color 0.3s; /* 전환 효과 */
+}
+
+/* 버튼 hover 시 효과 */
+button:hover {
+    background-color: #ddd;
+    transform: scale(1.1) rotate(5deg); /* hover 시 확대 및 회전 */
+}
+
+/* 버튼 클릭 시 효과 */
+button:active {
+    transform: scale(1.2) rotate(10deg); /* 클릭 시 확대 및 회전 */
+    background-color: #bbb; /* 클릭 시 배경색 어둡게 */
+}
+
+/* 특별 버튼 스타일 */
+button.c {
+    background-color: #e74c3c; /* 빨간색 */
+    color: white;
+}
+
+button.del {
+    background-color: orange;
+    color: white;
+}
+
+button.equals {
+    background-color: #4CAF50; /* 녹색 */
+    color: white;
+}
+
+/* 특별 버튼 hover 시 효과 */
+button.equals:hover, button.scientific:hover {
+    transform: scale(1.15) rotate(7deg); /* hover 시 더 큰 확대 및 회전 */
+}
+
+button.equals:active, button.scientific:active {
+    transform: scale(1.25) rotate(15deg); /* 클릭 시 더 강한 확대 및 회전 */
+}
+
+/* 공학용 기능 버튼 스타일 */
+button.scientific {
+    background-color: #9512f3; /* 보라색 */
+    color: white;
+}
+
+button.scientific:hover {
+    background-color: #e67e22; /* hover 시 주황색 */
+}
+
+/* 공학용 기능 버튼 클릭 시 효과 */
+button.scientific:active {
+    background-color: #d35400; /* 클릭 시 더 어두운 주황색 */
+}
+
+/* 입력 필드에 값이 추가될 때 애니메이션 */
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* 전체 계산기 진동 효과 */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    20%, 60% {
+        transform: translateX(-10px);
+    }
+    40%, 80% {
+        transform: translateX(10px);
+    }
+}
+
+.calculator.shake {
+    animation: shake 0.5s; /* 계산기 흔들림 효과 */
+}
